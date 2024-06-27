@@ -17,13 +17,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //set OnClickListener
+        //set OnClickListeners for each button
         binding.btnAdd.setOnClickListener(this)
         binding.btnSub.setOnClickListener(this)
         binding.btnMul.setOnClickListener(this)
         binding.btnDiv.setOnClickListener(this)
     }
+    //adding button functionality for each math operation button
     override fun onClick(v: View?) {
+        //grabbing a and b values from xml file
         var a = binding.etA.text.toString().toDouble()
         var b = binding.etB.text.toString().toDouble()
         var result = 0.0
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 result = a / b
             }
         }
+        //assining result value
         binding.resultTv.text = "Result is $result"
     }
 }
